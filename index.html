@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CódigoQR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.min.js"></script>
+    <script src="application_codigo_qr.js" defer></script>     
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div id="application_codigo_qr">        
+        <h1>{{ title_codigo_qr }}</h1>
+        <div class="input">
+            <input type="text" size="10" 
+            placeholder="Digite o seu nome para gerar um código QR"
+            :value ="name_user"
+            @input="onData">                
+         </div>     
+        <div v-if="name_user" class="executa_codigo_qr">
+            <img :src="newCodigoQR">
+        </div>             
+    </div> 
+</body>
+</html>
